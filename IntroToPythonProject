@@ -1,0 +1,53 @@
+import random
+
+
+# Lists of possible characters to use in the password
+letters_list = [
+    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
+    'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D',
+    'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S',
+    'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+]
+
+# List of number characters
+numbers_list = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+
+
+# List of symbol characters
+symbols_list = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+
+print("Andrew's Random Password Generator!")
+
+# Ask user for how many letters they want in their password
+num_letters = int(input("Select how many letters for your password:\n"))
+
+# Ask user for how many symbols they want in their password
+num_symbols = int(input("Select how many symbols for your password:\n"))
+
+# Ask user for how many numbers they want in their password
+num_numbers = int(input("Select how many numbers for your password:\n"))
+
+password_list = []
+
+
+# Add random letters to the password list based on user input
+for _ in range(num_letters):
+    password_list.append(random.choice(letters_list))
+
+
+# Add random symbols to the password list based on user input
+for _ in range(num_symbols):
+    password_list.append(random.choice(symbols_list))
+
+
+# Add random numbers to the password list based on user input
+for _ in range(num_numbers):
+    password_list.append(random.choice(numbers_list))
+
+# Shuffle the list to randomize character order
+random.shuffle(password_list)
+
+# Join all characters in the list into a single string
+password = ''.join(password_list)
+
+print(f"Here is your random password: {password}")
